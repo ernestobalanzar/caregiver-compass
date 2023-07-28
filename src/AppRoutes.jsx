@@ -9,7 +9,7 @@ import AuthLayout from "./layout/AuthLayout";
 import AppLayout from "./layout/AppLayout";
 import Dashboard from "./pages/Dashboard";
 import Team from "./pages/Team";
-import Billing from "./pages/Billing";
+import Billing from "./pages/billing";
 import Settings from "./pages/Settings";
 import Calendar from "./pages/Calendar";
 import Resources from "./pages/Resources";
