@@ -1,0 +1,67 @@
+#root {
+  #__next {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/*
+LOGO
+SVG
+*/
+
+.cls-1 {
+  fill: #9acfc8;
+}
+.cls-2,
+.cls-5 {
+  fill: #fff;
+}
+.cls-3 {
+  fill: #8ac9c2;
+}
+.cls-4 {
+  fill: #70c0b7;
+}
+.cls-5 {
+  font-size: 259.77px;
+  font-family: Arial-BoldMT, Arial;
+  font-weight: 700;
+}
