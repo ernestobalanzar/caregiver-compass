@@ -185,7 +185,7 @@ export default function AppLayout({ children }) {
                         </li>
                         <li className="mt-auto">
                           <Link
-                            to="#"
+                            to="/settings"
                             className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-indigo-200 hover:bg-cyan-700 hover:text-white"
                           >
                             <Cog6ToothIcon
