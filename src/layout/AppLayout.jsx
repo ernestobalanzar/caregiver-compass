@@ -1,4 +1,5 @@
 import { Fragment, useState } from "react";
+import { Link } from "react-router-dom";
 import { Dialog, Menu, Transition } from "@headlessui/react";
 import { Logo } from "../components/Logo";
 import {
@@ -128,8 +129,8 @@ export default function AppLayout({ children }) {
                           <ul role="list" className="-mx-2 space-y-1">
                             {navigation.map((item) => (
                               <li key={item.name}>
-                                <a
-                                  href={item.href}
+                                <Link
+                                  to={item.href}
                                   className={classNames(
                                     location.pathname.indexOf(`${item.href}`) ==
                                       -1
@@ -150,7 +151,7 @@ export default function AppLayout({ children }) {
                                     aria-hidden="true"
                                   />
                                   {item.name}
-                                </a>
+                                </Link>
                               </li>
                             ))}
                           </ul>
@@ -162,8 +163,8 @@ export default function AppLayout({ children }) {
                           <ul role="list" className="-mx-2 mt-2 space-y-1">
                             {teams.map((team) => (
                               <li key={team.name}>
-                                <a
-                                  href={team.href}
+                                <Link
+                                  to={team.href}
                                   className={classNames(
                                     location.pathname.indexOf(
                                       `${team.href}`
@@ -177,14 +178,14 @@ export default function AppLayout({ children }) {
                                     {team.initial}
                                   </span>
                                   <span className="truncate">{team.name}</span>
-                                </a>
+                                </Link>
                               </li>
                             ))}
                           </ul>
                         </li>
                         <li className="mt-auto">
-                          <a
-                            href="#"
+                          <Link
+                            to="#"
                             className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-indigo-200 hover:bg-cyan-700 hover:text-white"
                           >
                             <Cog6ToothIcon
@@ -192,7 +193,7 @@ export default function AppLayout({ children }) {
                               aria-hidden="true"
                             />
                             Settings
-                          </a>
+                          </Link>
                         </li>
                       </ul>
                     </nav>
@@ -216,8 +217,8 @@ export default function AppLayout({ children }) {
                   <ul role="list" className="-mx-2 space-y-1">
                     {navigation.map((item) => (
                       <li key={item.name}>
-                        <a
-                          href={item.href}
+                        <Link
+                          to={item.href}
                           className={classNames(
                             location.pathname.indexOf(`${item.href}`) !== -1
                               ? "bg-cyan-700 text-white"
@@ -235,7 +236,7 @@ export default function AppLayout({ children }) {
                             aria-hidden="true"
                           />
                           {item.name}
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>
@@ -247,8 +248,8 @@ export default function AppLayout({ children }) {
                   <ul role="list" className="-mx-2 mt-2 space-y-1">
                     {teams.map((team) => (
                       <li key={team.name}>
-                        <a
-                          href={team.href}
+                        <Link
+                          to={team.href}
                           className={classNames(
                             location.pathname.indexOf(`${team.href}`) !== -1
                               ? "bg-cyan-700 text-white"
@@ -260,14 +261,14 @@ export default function AppLayout({ children }) {
                             {team.initial}
                           </span>
                           <span className="truncate">{team.name}</span>
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>
                 </li>
                 <li className="mt-auto">
-                  <a
-                    href="/settings"
+                  <Link
+                    to="/settings"
                     className={classNames(
                       location.pathname.indexOf("/settings") !== -1
                         ? "bg-cyan-700 text-white"
@@ -280,7 +281,7 @@ export default function AppLayout({ children }) {
                       aria-hidden="true"
                     />
                     Settings
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </nav>
@@ -371,15 +372,15 @@ export default function AppLayout({ children }) {
                       {userNavigation.map((item) => (
                         <Menu.Item key={item.name}>
                           {({ active }) => (
-                            <a
-                              href={item.href}
+                            <Link
+                              to={item.href}
                               className={classNames(
                                 active ? "bg-gray-50" : "",
                                 "block px-3 py-1 text-sm leading-6 text-gray-900"
                               )}
                             >
                               {item.name}
-                            </a>
+                            </Link>
                           )}
                         </Menu.Item>
                       ))}
