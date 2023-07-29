@@ -2,19 +2,19 @@ import { Route, BrowserRouter, Routes } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 import Index from "./pages/index";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
+import Login from "./pages/login";
+import Register from "./pages/register";
 import Layout from "./layout/Layout";
 import AuthLayout from "./layout/AuthLayout";
 import AppLayout from "./layout/AppLayout";
-import Dashboard from "./pages/Dashboard";
-import Team from "./pages/Team";
+import Dashboard from "./pages/dashboard";
+import Team from "./pages/team";
 import Billing from "./pages/billing";
-import Settings from "./pages/Settings";
-import Calendar from "./pages/Calendar";
-import Resources from "./pages/Resources";
-import Tracking from "./pages/Tracking";
-import Profile from "./pages/Profile";
+import Settings from "./pages/settings";
+import Calendar from "./pages/calendar";
+import Resources from "./pages/resources";
+import Tracking from "./pages/tracking";
+import Profile from "./pages/profile";
 import SearchResults from "./pages/searchResults";
 
 const AuthenticatedRoute = ({ children, ...rest }) => {
