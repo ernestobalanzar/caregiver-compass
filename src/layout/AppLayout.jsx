@@ -14,14 +14,15 @@ import {
   UsersIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
+import stevenMchailImage from "../images/avatars/steven-mchail.jpg";
 import {
   ChevronDownIcon,
   MagnifyingGlassIcon,
 } from "@heroicons/react/20/solid";
 
 const navigation = [
-  { name: "Dashboard", href: "/dashboard", icon: HomeIcon, current: false },
-  { name: "Team", href: "/team", icon: UsersIcon, current: false },
+  { name: "Home", href: "/dashboard", icon: HomeIcon, current: false },
+  { name: "Circles", href: "/team", icon: UsersIcon, current: false },
   { name: "Billing", href: "/billing", icon: FolderIcon, current: false },
   { name: "Calendar", href: "/calendar", icon: CalendarIcon, current: false },
   {
@@ -132,8 +133,9 @@ export default function AppLayout({ children }) {
                                 <Link
                                   to={item.href}
                                   className={classNames(
-                                    location.pathname.indexOf(`${item.href}`) ==
-                                      -1
+                                    location.pathname.indexOf(
+                                      `${item.href}`
+                                    ) !== -1
                                       ? "bg-cyan-700 text-white"
                                       : "text-indigo-200 hover:text-white hover:bg-cyan-700",
                                     "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
@@ -305,7 +307,7 @@ export default function AppLayout({ children }) {
               aria-hidden="true"
             />
 
-            <div className="flex flex-1 gap-x-4 self-stretch lg:gap-x-6">
+            <div className="flex flex-1 gap-x-4 self-stretch lg:gap-x-6 z-50">
               <form className="relative flex flex-1" action="#" method="GET">
                 <label htmlFor="search-field" className="sr-only">
                   Search
@@ -316,7 +318,7 @@ export default function AppLayout({ children }) {
                 />
                 <input
                   id="search-field"
-                  className="block h-full w-full border-0 py-0 pl-8 pr-0 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm"
+                  className="block h-full w-full border-0 py-0 pl-8 pr-0 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm z-50"
                   placeholder="Search..."
                   type="search"
                   name="search"
@@ -342,8 +344,8 @@ export default function AppLayout({ children }) {
                   <Menu.Button className="-m-1.5 flex items-center p-1.5">
                     <span className="sr-only">Open user menu</span>
                     <img
-                      className="h-8 w-8 rounded-full bg-gray-50"
-                      src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                      className="h-6 w-10 rounded-full bg-gray-50"
+                      src={stevenMchailImage}
                       alt=""
                     />
                     <span className="hidden lg:flex lg:items-center">
@@ -392,7 +394,7 @@ export default function AppLayout({ children }) {
           </div>
 
           <main className="py-10">
-            <div className="px-4 sm:px-6 lg:px-8">{children}</div>
+            <div className="px-2 sm:px-6 lg:px-8 bg-gray-50">{children}</div>
           </main>
         </div>
       </div>
