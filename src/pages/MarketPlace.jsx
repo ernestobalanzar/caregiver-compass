@@ -13,8 +13,8 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import { ChevronDownIcon, PlusIcon } from "@heroicons/react/20/solid";
-import Scale from "../images/scale.jpg";
-import CaringMill from "../images/caringMill.jpg";
+import Scale from "../images/Scale.jpg";
+import CaringMill from "../images/CaringMill.jpg";
 import Spectralite from "../images/spectralite.jpg";
 import americanRedCross from "../images/americanRedCross.jpg";
 
