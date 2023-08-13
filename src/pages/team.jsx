@@ -23,6 +23,10 @@ import rinaldoBeynonImage from "../images/avatars/rinaldo-beynon.jpg";
 import ronniCantadoreImage from "../images/avatars/ronni-cantadore.jpg";
 import stevenMchailImage from "../images/avatars/steven-mchail.jpg";
 import waylonHydenImage from "../images/avatars/waylon-hyden.jpg";
+import InviteMember from "../components/InviteMember";
+import Luis from "../images/avatars/Luis.jpg";
+import { PlusIcon } from "@heroicons/react/20/solid";
+import background from "../images/background.jpg";
 
 const days = [
   {
@@ -152,6 +156,7 @@ function ImageClipPaths({ id, ...props }) {
 }
 
 export default function Team() {
+  const [isOpen, setIsOpen] = useState(false);
   let id = useId();
   let [tabOrientation, setTabOrientation] = useState("horizontal");
 
@@ -170,6 +175,14 @@ export default function Team() {
     };
   }, []);
 
+  const openModal = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const handleCloseModal = () => {
+    setIsOpen(false);
+  };
+
   return (
     <section
       id="speakers"
@@ -177,7 +190,7 @@ export default function Team() {
       className="py-5 sm:py-5"
     >
       <ImageClipPaths id={id} />
-
+      <InviteMember IsOpen={isOpen} onClose={handleCloseModal} />
       <Container>
         <div className="mx-auto max-w-2xl lg:mx-0">
           <h2
@@ -191,6 +204,51 @@ export default function Team() {
             caregiver, you're never alone; your friends, family members, and
             even professional aides can be part of your support team.
           </p>
+        </div>
+      </Container>
+
+      <Container className={"py-10 sm:py-10"}>
+        <div className="relative -mx-4 overflow-hidden bg-indigo-50 px-4 py-15 sm:-mx-6 sm:px-6 md:mx-0 md:rounded-5xl md:px-16 xl:px-24 xl:py-20">
+          <img
+            alt=""
+            loading="lazy"
+            width="919"
+            height="1351"
+            className="absolute left-1/2 top-0 translate-x-[-10%] translate-y-[-45%] lg:translate-x-[-32%]"
+            src={background}
+          />
+          <div className="relative mx-auto grid max-w-2xl grid-cols-1 gap-x-32 gap-y-14 xl:max-w-none xl:grid-cols-2">
+            <div>
+              <p className="font-display text-4xl font-medium tracking-tighter text-blue-900 sm:text-5xl">
+                Meet Luis:
+              </p>
+              <p className="mt-4 text-lg tracking-tight text-blue-900">
+                Thank you for joining my inner circle, it means a lot to me, I
+                know with your support I will get through this.
+              </p>
+            </div>
+            <form>
+              <div className="mt-5 flex items-center justify-center content-center rounded-3xl  py-2.5 pr-2.5 shadow-xl shadow-blue-900/5 focus-within:ring-2 focus-within:ring-blue-900">
+                <img className="h-36 w-36 rounded-full" src={Luis} alt="" />
+              </div>
+            </form>
+          </div>
+        </div>
+      </Container>
+
+      <Container>
+        <div className="relative flex justify-center pt-6">
+          <button
+            onClick={openModal}
+            type="button"
+            className="inline-flex items-center gap-x-1.5 rounded-full bg-white px-3 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+          >
+            <PlusIcon
+              className="-ml-1 -mr-0.5 h-5 w-5 text-gray-400"
+              aria-hidden="true"
+            />
+            Invite New Member
+          </button>
         </div>
         <Tab.Group
           as="div"

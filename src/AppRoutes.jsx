@@ -19,6 +19,13 @@ import Resources from "./pages/resources";
 import Tracking from "./pages/tracking";
 import Profile from "./pages/profile";
 import SearchResults from "./pages/searchResults";
+import OneOnOne from "./pages/oneOnOne";
+import Training from "./pages/training";
+import ChatBotCompass from "./pages/chatBot";
+import MarketPlace from "./pages/MarketPlace";
+import Docs from "./pages/docs";
+import GeneralResourcesForm from "./pages/GeneralResourcesForm";
+import Help from "./pages/help";
 
 const AuthenticatedRoute = ({ children, ...rest }) => {
   return (
@@ -130,12 +137,29 @@ const AppRoutes = () => {
       <InnerAppRouteLayout path="/resources">
         <Resources />
       </InnerAppRouteLayout>
+      <InnerAppRouteLayout path="/oneonone">
+        <OneOnOne />
+      </InnerAppRouteLayout>
+      <InnerAppRouteLayout path="/training">
+        <Training />
+      </InnerAppRouteLayout>
+      <InnerAppRouteLayout path="/bot">
+        <ChatBotCompass />
+      </InnerAppRouteLayout>
+      <InnerAppRouteLayout path="/marketplace">
+        <MarketPlace />
+      </InnerAppRouteLayout>
+      <InnerAppRouteLayout path="/docs">
+        <Docs />
+      </InnerAppRouteLayout>
+      <InnerAppRouteLayout path="/generalresourcesform">
+        <GeneralResourcesForm />
+      </InnerAppRouteLayout>
       <AppRouteLayout path="/billing">
         <Billing />
       </AppRouteLayout>
-
-      <AppRouteLayout path="/tracking">
-        <Tracking />
+      <AppRouteLayout path="/help">
+        <Help />
       </AppRouteLayout>
       <AppRouteLayout path="/profile">
         <Profile />

@@ -2,6 +2,7 @@ import React from "react";
 import moment from "moment";
 import { Container } from "../components/Container";
 import Feed from "../components/Feed";
+import NestedFeed from "../components/NestedFeed";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -92,6 +93,7 @@ export default function Home() {
       </Container>
       <Container className={"py-10 sm:py-10"}>
         <Feed />
+        <NestedFeed />
       </Container>
     </>
   );

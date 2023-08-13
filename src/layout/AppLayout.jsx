@@ -13,6 +13,7 @@ import {
   HomeIcon,
   UsersIcon,
   XMarkIcon,
+  PhoneIcon,
 } from "@heroicons/react/24/outline";
 import stevenMchailImage from "../images/avatars/steven-mchail.jpg";
 import {
@@ -21,23 +22,11 @@ import {
 } from "@heroicons/react/20/solid";
 
 const navigation = [
-  { name: "Home", href: "/dashboard", icon: HomeIcon, current: false },
-  { name: "Circles", href: "/team", icon: UsersIcon, current: false },
+  { name: "Home", href: "/home", icon: HomeIcon, current: false },
   { name: "Billing", href: "/billing", icon: FolderIcon, current: false },
-  { name: "Calendar", href: "/calendar", icon: CalendarIcon, current: false },
-  {
-    name: "Resources",
-    href: "/resources",
-    icon: DocumentDuplicateIcon,
-    current: false,
-  },
-  { name: "Tracking", href: "/tracking", icon: ChartPieIcon, current: false },
+  { name: "Help Center", href: "/help", icon: PhoneIcon, current: false },
 ];
-const teams = [
-  { id: 1, name: "Local Caregivers", href: "#", initial: "H", current: false },
-  { id: 2, name: "Covid Patients", href: "#", initial: "T", current: false },
-  { id: 3, name: "Eldercare", href: "#", initial: "W", current: false },
-];
+const teams = [];
 const userNavigation = [
   { name: "Your profile", href: "/profile" },
   { name: "Sign out", href: "/" },
