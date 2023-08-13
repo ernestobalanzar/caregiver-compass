@@ -12,7 +12,7 @@ export default function Login() {
       (event.target.elements.email.value === "tom@compass.com") &
       (event.target.elements.password.value === "admin123")
     ) {
-      navigateTo("/dashboard");
+      navigateTo("/home");
     } else {
       alert("Invalid Credentials");
     }
