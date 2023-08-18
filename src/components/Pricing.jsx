@@ -49,7 +49,7 @@ const plans = [
     logomarkClassName: "fill-gray-500",
   },
   {
-    name: "Instatuition Plan",
+    name: "Institutional Plan",
     featured: true,
     price: { Monthly: "$199", Annually: "$1,990" },
     description:

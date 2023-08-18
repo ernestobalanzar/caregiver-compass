@@ -14,6 +14,7 @@ import {
   UsersIcon,
   XMarkIcon,
   PhoneIcon,
+  LightBulbIcon,
 } from "@heroicons/react/24/outline";
 import stevenMchailImage from "../images/avatars/steven-mchail.jpg";
 import {
@@ -25,6 +26,7 @@ const navigation = [
   { name: "Home", href: "/home", icon: HomeIcon, current: false },
   { name: "Billing", href: "/billing", icon: FolderIcon, current: false },
   { name: "Help Center", href: "/help", icon: PhoneIcon, current: false },
+  { name: "Feedback", href: "/feedback", icon: LightBulbIcon, current: false },
 ];
 const teams = [];
 const userNavigation = [

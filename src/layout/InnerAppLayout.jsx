@@ -11,8 +11,8 @@ import {
 export default function InnerAppLayout({ children }) {
   const secondaryNavigation = [
     { name: "Home", href: "/home", current: true },
-    { name: "Calendar", href: "/calendar", current: false },
     { name: "Circle", href: "/team", current: false },
+    { name: "Calendar", href: "/calendar", current: false },
     { name: "Resources", href: "/resources", current: false },
     { name: "Documents", href: "/docs", current: false },
   ];
@@ -68,15 +68,6 @@ export default function InnerAppLayout({ children }) {
             </span>
           </Link>
           <Link
-            to="/calendar"
-            className="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group"
-          >
-            <CalendarIcon className="w-5 h-5 mb-2 text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500" />
-            <span className="text-sm text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500">
-              Calendar
-            </span>
-          </Link>
-          <Link
             to="/team"
             className="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group"
           >
@@ -85,6 +76,16 @@ export default function InnerAppLayout({ children }) {
               Circle
             </span>
           </Link>
+          <Link
+            to="/calendar"
+            className="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group"
+          >
+            <CalendarIcon className="w-5 h-5 mb-2 text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500" />
+            <span className="text-sm text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500">
+              Calendar
+            </span>
+          </Link>
+
           <Link
             to="/resources"
             className="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group"

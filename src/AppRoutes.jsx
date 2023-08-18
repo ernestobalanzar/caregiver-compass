@@ -26,6 +26,7 @@ import MarketPlace from "./pages/MarketPlace";
 import Docs from "./pages/docs";
 import GeneralResourcesForm from "./pages/GeneralResourcesForm";
 import Help from "./pages/help";
+import Feedback from "./pages/feedback";
 
 const AuthenticatedRoute = ({ children, ...rest }) => {
   return (
@@ -160,6 +161,9 @@ const AppRoutes = () => {
       </AppRouteLayout>
       <AppRouteLayout path="/help">
         <Help />
+      </AppRouteLayout>
+      <AppRouteLayout path="/feedback">
+        <Feedback />
       </AppRouteLayout>
       <AppRouteLayout path="/profile">
         <Profile />
