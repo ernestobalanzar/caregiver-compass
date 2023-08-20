@@ -51,7 +51,7 @@ const plans = [
   {
     name: "Institutional Plan",
     featured: true,
-    price: { Monthly: "$199", Annually: "$1,990" },
+    price: { Monthly: "ask for a quote", Annually: "ask for a quote" },
     description:
       "You can manage your team and your clients with the best tools in the industry.",
     button: {

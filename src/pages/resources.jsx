@@ -50,7 +50,7 @@ const actions = [
 
   {
     title: "Financial & Legal",
-    href: "/generalresourcesform",
+    href: "/legalfinance",
     icon: BanknotesIcon,
     iconForeground: "text-yellow-700",
     iconBackground: "bg-yellow-50",

@@ -27,6 +27,7 @@ import Docs from "./pages/docs";
 import GeneralResourcesForm from "./pages/GeneralResourcesForm";
 import Help from "./pages/help";
 import Feedback from "./pages/feedback";
+import LegalFinance from "./pages/legal-finance";
 
 const AuthenticatedRoute = ({ children, ...rest }) => {
   return (
@@ -155,6 +156,9 @@ const AppRoutes = () => {
       </InnerAppRouteLayout>
       <InnerAppRouteLayout path="/generalresourcesform">
         <GeneralResourcesForm />
+      </InnerAppRouteLayout>
+      <InnerAppRouteLayout path="/legalfinance">
+        <LegalFinance />
       </InnerAppRouteLayout>
       <AppRouteLayout path="/billing">
         <Billing />
