@@ -5,11 +5,12 @@ import { Pricing } from "../components/Pricing";
 import { PrimaryFeatures } from "../components/PrimaryFeatures";
 import { Reviews } from "../components/Reviews";
 import { SecondaryFeatures } from "../components/SecondaryFeatures";
+import { HeroSliderComponent } from "../components/HeroSlider";
 
 export default function Home() {
   return (
     <>
-      <Hero />
+      <HeroSliderComponent />
       <PrimaryFeatures />
       <SecondaryFeatures />
       <CallToAction />
