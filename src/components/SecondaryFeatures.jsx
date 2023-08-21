@@ -36,7 +36,7 @@ const features = [
   {
     name: "Financial Guidance",
     description:
-      "Given the financial stress caregivers often experience, the platform should provide financial guidance. This might include tips on budgeting, information on financial support options, or tools to track and manage caregiving-related expenses",
+      "Given the financial stress caregivers often experience, we have tips on budgeting, information on financial supports and resources and tools to track and manage caregiving-related expenses",
     icon: DeviceChartIcon,
   },
 ];

@@ -269,10 +269,11 @@ export function Reviews() {
           id="reviews-title"
           className="text-3xl font-medium tracking-tight text-gray-900 sm:text-center"
         >
-          Everyone is changing improving their life with COMPASS.
+          Everyone is changing improving their life with Caregiver Compass.
         </h2>
         <p className="mt-2 text-lg text-gray-600 sm:text-center">
-          A lot of people have been using COMPASS to improve their life. Here's
+          A lot of people have been using Caregiver Compass to improve their
+          life. Here's
         </p>
         <ReviewGrid />
       </Container>
