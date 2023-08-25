@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import moment from "moment";
 import { Container } from "../components/Container";
 import Feed from "../components/Feed";
 import NestedFeed from "../components/NestedFeed";
+import stevenMchailImage from "../images/avatars/steven-mchail.jpg";
+import piersWilkinsImage from "../images/avatars/piers-wilkins.jpg";
+import rinaldoBeynonImage from "../images/avatars/rinaldo-beynon.jpg";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -36,6 +39,48 @@ export default function Home() {
     },
     // More items...
   ];
+
+  const [comments, setComments] = useState([
+    {
+      id: 0,
+      name: "Tom Cook",
+      date: "2d ago",
+      imageSrc: stevenMchailImage,
+
+      body: "Hey all!!. As many of you know, Luis is going through a challenging time, and our support can make a world of difference for him. This group was created to coordinate and offer care for Luis during this period. We're like a family here, and I believe our collective strength can help him navigate this journey. Thank you all for being a part of this crucial effort. Your commitment is invaluable, and together, we can ensure Luis feels the love, care, and support he needs. I encourage everyone to introduce themselves briefly, share any thoughts, and let's discuss the best ways we can assist.",
+      replies: [
+        {
+          id: 1,
+          name: "Piers Wilkins",
+          date: "2d ago",
+          imageSrc: piersWilkinsImage,
+          body: "We can do this together! I'm here to help in any way I can.",
+        },
+        {
+          id: 2,
+          name: "Rinaldo Beynon",
+          date: "2d ago",
+          imageSrc: rinaldoBeynonImage,
+          body: "I will be here for Luis. I'm available to help with",
+        },
+      ],
+    },
+  ]);
+
+  const addComment = (comment) => {
+    setComments((comments) => {
+      // Add the new comment to the comments array
+      const newComments = [...comments, comment];
+
+      // Sort the newComments array based on the timestamp in descending order
+      return newComments.sort((a, b) => b.id - a.id);
+    });
+  };
+
+  const addSubcomment = (newComments) => {
+    setComments(newComments.sort((a, b) => b.id - a.id));
+  };
+
   return (
     <>
       {/* Heading */}
@@ -92,8 +137,8 @@ export default function Home() {
         </div>
       </Container>
       <Container className={"py-10 sm:py-10"}>
-        <Feed />
-        <NestedFeed />
+        <Feed addComment={addComment} comments={comments} />
+        <NestedFeed comments={comments} addSubcomment={addSubcomment} />
       </Container>
     </>
   );

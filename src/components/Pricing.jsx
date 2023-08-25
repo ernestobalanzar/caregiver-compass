@@ -60,7 +60,7 @@ const plans = [
     },
     features: [
       "Institutional Health Tracking",
-      "MMental Health Support for Teams",
+      "Mental Health Support for Teams",
       "Institutional Financial Tracking",
       "Advanced AI Support",
       "Institutional Work-Life Balance",

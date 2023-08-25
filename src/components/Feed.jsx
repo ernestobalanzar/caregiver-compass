@@ -60,12 +60,24 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Feed() {
+export default function Feed(props) {
   const [selected, setSelected] = useState(moods[5]);
+
+  const addComment = (comment) => {
+    var newComment = {
+      name: "Tom Cook",
+      imageSrc: stevenMchailImage,
+      body: comment,
+      mood: selected,
+      date: new Date(),
+      id: props.comments.length + 1,
+      replies: [],
+    };
+    props.addComment(newComment);
+  };
 
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      {/* We've used 3xl here, but feel free to try other max-widths based on your needs */}
       <div className="mx-auto max-w-3xl rounded-md bg-white shadow-lg px-4 py-5 sm:px-6">
         <div className="flex items-start space-x-4">
           <div className="flex-shrink-0">
@@ -201,7 +213,10 @@ export default function Feed() {
                 </div>
                 <div className="flex-shrink-0">
                   <button
-                    type="submit"
+                    type="button"
+                    onClick={() =>
+                      addComment(document.getElementById("comment").value)
+                    }
                     className="inline-flex items-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                   >
                     Post

@@ -8,6 +8,7 @@ import {
   ReceiptRefundIcon,
   UsersIcon,
   HeartIcon,
+  MapIcon,
   ChatBubbleBottomCenterIcon,
 } from "@heroicons/react/24/outline";
 import { Container } from "../components/Container";
@@ -46,6 +47,14 @@ const actions = [
     iconForeground: "text-purple-700",
     iconBackground: "bg-purple-50",
     description: "Find the best products and services for your needs.",
+  },
+  {
+    title: "Local Healthcare Services",
+    href: "/localhealthcareservice",
+    icon: MapIcon,
+    iconForeground: "text-red-700",
+    iconBackground: "bg-green-50",
+    description: "Find the best local healthcare services near you.",
   },
 
   {
