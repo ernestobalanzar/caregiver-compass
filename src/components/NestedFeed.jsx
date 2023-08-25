@@ -97,6 +97,7 @@ export default function NestedFeed(props) {
       }
       return comment;
     });
+    document.getElementById("subcomment").value = "";
     props.addSubcomment(newComments);
   };
 

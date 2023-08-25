@@ -73,6 +73,8 @@ export default function Feed(props) {
       id: props.comments.length + 1,
       replies: [],
     };
+
+    document.getElementById("comment").value = "";
     props.addComment(newComment);
   };
 
