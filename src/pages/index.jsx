@@ -6,11 +6,12 @@ import { PrimaryFeatures } from "../components/PrimaryFeatures";
 import { Reviews } from "../components/Reviews";
 import { SecondaryFeatures } from "../components/SecondaryFeatures";
 import { HeroSliderComponent } from "../components/HeroSlider";
+import { HeroStatic } from "../components/HeroStatic";
 
 export default function Home() {
   return (
     <>
-      <HeroSliderComponent />
+      <HeroStatic />
       <PrimaryFeatures />
       <SecondaryFeatures />
       <CallToAction />
