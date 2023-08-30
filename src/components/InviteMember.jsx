@@ -4,6 +4,32 @@ import { UsersIcon } from "@heroicons/react/24/outline";
 
 export default function InviteMember(props) {
   const [open, setOpen] = useState(false);
+  const [role, setRole] = useState("");
+  const [description, setDescription] = useState("");
+
+  const showDescription = (role) => {
+    setRole(role);
+    switch (role) {
+      case "Admin":
+        setDescription(
+          "Grants full administrative control, including management of documents, calendars, and medications. Can also invite new members to the circle."
+        );
+        break;
+      case "Caregiver":
+        setDescription(
+          "Permits scheduling on the shared calendar and viewing of essential documents and medications. No administrative permissions."
+        );
+        break;
+      case "Supporter":
+        setDescription(
+          "Limited access—allows viewing of calendar and training materials, along with the ability to comment in the home section. Ideal for friends and family"
+        );
+        break;
+      default:
+        setDescription("");
+        break;
+    }
+  };
 
   useEffect(() => {
     setOpen(props.IsOpen);
@@ -47,9 +73,9 @@ export default function InviteMember(props) {
               leaveFrom="opacity-100 translate-y-0 sm:scale-100"
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             >
-              <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg sm:p-6">
+              <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-xl sm:p-4">
                 <div>
-                  <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-green-100">
+                  <div className="mx-auto flex h-12 w-16 items-center justify-center rounded-full bg-green-100">
                     <UsersIcon
                       className="h-6 w-6 text-green-600"
                       aria-hidden="true"
@@ -111,13 +137,18 @@ export default function InviteMember(props) {
                               id="country"
                               name="country"
                               autoComplete="country-name"
+                              onChange={(e) => showDescription(e.target.value)}
                               className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6"
                             >
+                              <option>-Select Role-</option>
                               <option>Admin</option>
                               <option>Caregiver</option>
                               <option>Supporter</option>
                             </select>
                           </div>
+                        </div>
+                        <div className="sm:col-span-6">
+                          <p>{description}</p>
                         </div>
                       </div>
                     </div>

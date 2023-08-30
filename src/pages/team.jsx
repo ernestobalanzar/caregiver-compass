@@ -33,6 +33,8 @@ const days = [
     name: "",
     MainRole: "Admins",
     dateTime: "2022-04-04",
+    roleDescription:
+      "Responsible for comprehensive oversight of the caregiving circle. They handle document organization, schedule management, medication tracking, and additional administrative tasks. Circle Managers have the authority to bring in new participants into the caregiving network.",
     speakers: [
       {
         name: "Tom Cook",
@@ -65,6 +67,8 @@ const days = [
     name: "",
     MainRole: "Caregivers",
     dateTime: "2022-04-05",
+    roleDescription:
+      "Limited to scheduling activities on the shared calendar, this role also has visibility into essential documents and medication lists, but does not have the ability to modify them.",
     speakers: [
       {
         name: "Damaris Kimura",
@@ -102,6 +106,8 @@ const days = [
     name: "",
     MainRole: "Supporters",
     dateTime: "2022-04-06",
+    roleDescription:
+      "Primarily friends and family members, people in this role have restricted access to the caregiving circle. They can view the shared calendar and training materials, and they have the option to contribute comments in the home section.",
     speakers: [
       {
         name: "Andrew Greene",
@@ -295,45 +301,48 @@ export default function Team() {
           </div>
           <Tab.Panels className="lg:col-span-3">
             {days.map((day) => (
-              <Tab.Panel
-                key={day.dateTime}
-                className="grid grid-cols-1 gap-x-8 gap-y-10 ui-not-focus-visible:outline-none sm:grid-cols-2 sm:gap-y-16 md:grid-cols-3"
-                unmount={false}
-              >
-                {day.speakers.map((speaker, speakerIndex) => (
-                  <div key={speakerIndex}>
-                    <div className="group relative h-[17.5rem] transform overflow-hidden rounded-4xl">
-                      <div
-                        className={clsx(
-                          "absolute bottom-6 left-0 right-4 top-0 rounded-4xl border transition duration-300 group-hover:scale-95 xl:right-6",
-                          [
-                            "border-blue-300",
-                            "border-indigo-300",
-                            "border-sky-300",
-                          ][speakerIndex % 3]
-                        )}
-                      />
-                      <div
-                        className="absolute inset-0 bg-indigo-50"
-                        style={{ clipPath: `url(#${id}-${speakerIndex % 3})` }}
-                      >
-                        <img
-                          className="absolute inset-0 h-full w-full object-cover transition duration-300 group-hover:scale-110"
-                          src={speaker.image}
-                          alt=""
-                          loading="lazy"
-                          sizes="(min-width: 1280px) 17.5rem, (min-width: 1024px) 25vw, (min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw"
+              <Tab.Panel key={day.dateTime} unmount={false}>
+                <p className="flex mt-1 text-base tracking-tight text-slate-500 justify-center items-center mb-6">
+                  {day.roleDescription}
+                </p>
+                <div className="grid grid-cols-1 gap-x-8 gap-y-10 ui-not-focus-visible:outline-none sm:grid-cols-2 sm:gap-y-16 md:grid-cols-3">
+                  {day.speakers.map((speaker, speakerIndex) => (
+                    <div key={speakerIndex}>
+                      <div className="group relative h-[17.5rem] transform overflow-hidden rounded-4xl">
+                        <div
+                          className={clsx(
+                            "absolute bottom-6 left-0 right-4 top-0 rounded-4xl border transition duration-300 group-hover:scale-95 xl:right-6",
+                            [
+                              "border-blue-300",
+                              "border-indigo-300",
+                              "border-sky-300",
+                            ][speakerIndex % 3]
+                          )}
                         />
+                        <div
+                          className="absolute inset-0 bg-indigo-50"
+                          style={{
+                            clipPath: `url(#${id}-${speakerIndex % 3})`,
+                          }}
+                        >
+                          <img
+                            className="absolute inset-0 h-full w-full object-cover transition duration-300 group-hover:scale-110"
+                            src={speaker.image}
+                            alt=""
+                            loading="lazy"
+                            sizes="(min-width: 1280px) 17.5rem, (min-width: 1024px) 25vw, (min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw"
+                          />
+                        </div>
                       </div>
+                      <h3 className="mt-8 font-display text-xl font-bold tracking-tight text-slate-900">
+                        {speaker.name}
+                      </h3>
+                      <p className="mt-1 text-base tracking-tight text-slate-500">
+                        {speaker.role}
+                      </p>
                     </div>
-                    <h3 className="mt-8 font-display text-xl font-bold tracking-tight text-slate-900">
-                      {speaker.name}
-                    </h3>
-                    <p className="mt-1 text-base tracking-tight text-slate-500">
-                      {speaker.role}
-                    </p>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </Tab.Panel>
             ))}
           </Tab.Panels>
