@@ -17,6 +17,9 @@ import Scale from "../images/Scale.jpg";
 import CaringMill from "../images/CaringMill.jpg";
 import Spectralite from "../images/spectralite.jpg";
 import americanRedCross from "../images/americanRedCross.jpg";
+import panal from "../images/panal.jpeg";
+import poty from "../images/poty.jpeg";
+import posey from "../images/Posey.jpg";
 
 const navigation = {
   categories: [
@@ -197,6 +200,40 @@ const products = [
     imageSrc: CaringMill,
     imageAlt:
       "Caring Mill By Aura Revive Heated Deep Muscle Pain Relief Device",
+  },
+  {
+    id: 3,
+    href: "#",
+    price: "$32",
+    description:
+      "The best Adult Protective Underwear, more commonly referred to as Adult Pull-Ups or Adult Pull-Ons, are designed for urinary and/or fecal incontinence.",
+    name: "Protective Underwear - Pull-Up Adult Diapers & Incontinence Briefs",
+    href: "#",
+    options: "Adult Underwear",
+    imageSrc: panal,
+    imageAlt: "Get a massage while lying down.",
+  },
+  {
+    id: 4,
+    name: "Folding Steel Commode",
+    href: "#",
+    price: "$32",
+    description:
+      "Steel framed folding commode folds flat for easy storage and includes sanitary plastic armrests, height adjustable legs, 7.5 qt. commode pail, and supports users up to 350 lbs.",
+    options: "Black",
+    imageSrc: poty,
+    options: "Adjustable seat height 16.6 -22.5",
+  },
+  {
+    id: 5,
+    name: "Posey Heel Pillows, Pair",
+    href: "#",
+    price: "$39.85",
+    description:
+      "Posey Heel Pillows help protect heels and ankles from skin irritation, friction burns, and pressure redistribution. ",
+    options: "Black",
+    imageSrc: posey,
+    imageAlt: "Posey KeepSafe Deluxe Alarm",
   },
   // More products...
 ];

@@ -80,6 +80,44 @@ export default function Training() {
           </p>
         </div>
       </div>
+      <div className="mx-auto max-w-3xl text-base leading-7 text-gray-700">
+        <div class="w-full p-8 bg-white">
+          <div class="rounded border border-gray-300 shadow-sm p-4 mb-4">
+            <p class="text-sm font-serif italic">
+              References: 1. Amyotrophic lateral sclerosis (ALS) fact sheet.
+              National Institute of Neurological Disorders and Stroke website.
+              https://www.ninds.nih.gov/Disorders/Patient-Caregiver-Education/Fact-Sheets/Amyotrophic-Lateral-Sclerosis-ALS-Fact-Sheet.
+              Published June 2013. Accessed April 13, 2017. 2. What is ALS? ALS
+              Association website.
+              http://www.alsa.org/about-als/what-is-als.html. Accessed April 13,
+              2017. 3. Who gets ALS? The ALS association
+              http://webco.alsa.org/site/PageServer/?pagename=CO_1_WhoGets.html.
+              Last updated May 2019. Accessed October 8, 2021. 4. What is ALS?
+              ALS Therapy Development Institute website.
+              http://www.als.net/what-is-als/. Accessed April 13, 2017. 5. Beghi
+              E, Mennini T, Bendotti C, et al. The heterogeneity of amyotrophic
+              lateral sclerosis: a possible explanation of treatment failure.
+              Curr Med Chem. 2007;14(30):3185-3200. 6. Symptoms and diagnosis.
+              ALS Association website.
+              http://www.alsa.org/about-als/symptoms.html. Accessed April 13,
+              2017. 7. Cedarbaum JM, Stambler N, Malta E, et al. The ALSFRS-R: a
+              revised ALS functional rating scale that incorporates assessments
+              of respiratory function. J Neurol Sci. 1999;169(1-2):13-21. 8.
+              Mitchell JD, Borasio GD. Amyotrophic lateral sclerosis. Lancet.
+              2007;369:2031-2041. 9. Amyotrophic lateral sclerosis: symptoms and
+              causes. Mayo Clinic website.
+              www.mayoclinic.org/diseases-conditions/amyotrophic-lateral-sclerosis/symptoms-causes/dxc-20247211.2016.
+              Accessed March 13, 2017. 10. ALS Society of Canada [Internet].
+              Toronto: ALS Canada; [cited 2018 August 15]. Pseudobulbar affect;
+              [about 1 paragraph]. Available from:
+              https://www.als.ca/wp-content/uploads/2017/04/ALSCAN-Pseudobulbar-Affect-EN.pdf.
+              11. Rutkove SB. Clinical measures of disease progression in
+              amyotrophic lateral sclerosis. Neurotherapeutics.
+              2015;12(2):384-393.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

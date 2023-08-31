@@ -30,7 +30,7 @@ const actions = [
     iconForeground: "text-indigo-700",
     iconBackground: "bg-indigo-50",
     description:
-      "The more you learn about ALS, the better prepared you're circle will be.",
+      "The more you learn about ALS, the better prepared your circle will be.",
   },
   {
     title: "Chat Bot",
@@ -66,7 +66,7 @@ const actions = [
     description: "Be prepared with key documents and resources",
   },
   {
-    title: "Care Management",
+    title: "Care Management/Employee Benefits ",
     href: "/generalresourcesform",
     icon: HeartIcon,
     iconForeground: "text-rose-700",
