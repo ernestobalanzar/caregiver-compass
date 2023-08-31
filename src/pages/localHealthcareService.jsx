@@ -26,7 +26,7 @@ export default function LocalHealthcareService() {
   useEffect(() => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(showPosition, handleError);
-      console.log(navigator.geolocation);
+      //console.log(navigator.geolocation);
     } else {
       console.log("Geolocation is not supported by this browser.");
     }
@@ -43,7 +43,7 @@ export default function LocalHealthcareService() {
       )
         .then((response) => response.json())
         .then((data) => {
-          //console.log(data);
+          console.log(data);
           const country = data.address.country;
           const state = data.address.state;
           const code = data.address["ISO3166-2-lvl4"].replace("US-", "");
@@ -51,10 +51,7 @@ export default function LocalHealthcareService() {
           const city = data.address.city;
           setLocation({ country, state, code, county, city });
           const filteredHospitals = hostpitals.filter(
-            (hospital) =>
-              hospital.state === code &&
-              hospital.county === county &&
-              hospital.city === city
+            (hospital) => hospital.state === code && hospital.county === county
           );
           setHospitals(filteredHospitals);
           console.log(filteredHospitals);
