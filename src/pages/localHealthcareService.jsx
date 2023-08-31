@@ -26,6 +26,7 @@ export default function LocalHealthcareService() {
   useEffect(() => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(showPosition, handleError);
+      console.log(navigator.geolocation);
     } else {
       console.log("Geolocation is not supported by this browser.");
     }
@@ -56,7 +57,7 @@ export default function LocalHealthcareService() {
               hospital.city === city
           );
           setHospitals(filteredHospitals);
-          //console.log(filteredHospitals);
+          console.log(filteredHospitals);
         })
         .catch((error) => {
           console.error("Error fetching location data: ", error);
