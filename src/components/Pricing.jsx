@@ -52,8 +52,7 @@ const plans = [
     name: "Institutional Plan",
     featured: true,
     price: { Monthly: "ask for a quote", Annually: "ask for a quote" },
-    description:
-      "You can manage your team and your clients with the best tools in the industry.",
+    description: "Support your Employees through thick and thin",
     button: {
       label: "Subscribe",
       href: "/register",

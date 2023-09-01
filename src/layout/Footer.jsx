@@ -28,7 +28,7 @@ export function Footer() {
             <div className="flex items-center text-gray-900">
               <Logomark className="h-9 w-9 flex-none fill-cyan-500" />
               <div className="ml-4">
-                <p className="text-2xl font-semibold">COMPASS</p>
+                <p className="text-2xl font-semibold">Caregiver Compass</p>
               </div>
             </div>
             <nav className="mt-11 flex gap-8">

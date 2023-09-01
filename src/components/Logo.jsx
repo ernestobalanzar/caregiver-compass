@@ -118,9 +118,13 @@ export function Logo(props) {
 }
 .cls-52 {
   fill: #164e63;
-  font-size: 270.77px;
+  font-size: 200.77px;
   font-family: Arial-BoldMT, Arial;
   font-weight: 700;
+  word-wrap: wrap;
+  flex-wrap: wrap;
+  display:table; 
+        white-space:normal;
 }`}
         </style>
       </defs>
@@ -200,7 +204,7 @@ export function Logo(props) {
         d="M399.77,388.56c2.69-9.36.7-12.27-.37-13.32-3.41-3.38-11.7-2-20.84,3.64,5.66-9.13,7.07-17.41,3.7-20.84-1.05-1.07-3.95-3.07-13.32-.41-18.56,5.27-30.38,19.72-36.92,27.91-27.53,34.49-34.78,46-34.78,46-13.1,19.5-26.76,42.93-42.77,70.35l-1,1.65,1.65-1c27.47-15.92,50.94-29.5,70.48-42.54,0,0,11.53-7.22,46.1-34.64C380,418.88,394.44,407.1,399.77,388.56Z"
       />
       <text className="cls-52" transform="translate(827.02 465.07)">
-        COMPASS
+        Caregiver Compass
       </text>
     </svg>
   );

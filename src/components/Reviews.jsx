@@ -269,11 +269,11 @@ export function Reviews() {
           id="reviews-title"
           className="text-3xl font-medium tracking-tight text-gray-900 sm:text-center"
         >
-          Everyone is changing improving their life with Caregiver Compass.
+          See What Others Are Saying About Caregiver Compass.
         </h2>
         <p className="mt-2 text-lg text-gray-600 sm:text-center">
-          A lot of people have been using Caregiver Compass to improve their
-          life. Here's
+          Trusted by families, endorsed by professionals—read the reviews that
+          make us proud to guide your caregiving journey.
         </p>
         <ReviewGrid />
       </Container>
