@@ -24,7 +24,7 @@ const features = [
   {
     name: "Caregiver Navigator & Community",
     description:
-      "Our system could offer personalized guidance for the caregivers' unique situations. It can use AI or human experts to guide caregivers through their journey, answering their questions, and providing support when needed",
+      "Our support system offers personalized guidance for the caregivers' unique situations. It can use AI or human experts to guide caregivers through their journey, answering their questions, and providing support when needed",
     icon: DeviceListIcon,
   },
   {
