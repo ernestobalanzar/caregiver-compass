@@ -22,10 +22,10 @@ export default function InnerAppLayout({ children }) {
       <Container>
         <header className="hidden lg:relative lg:z-40 lg:flex">
           {/* Secondary navigation */}
-          <nav className="flex overflow-x-auto border-b border-white/10 py-4">
+          <nav className="flex w-full overflow-x-auto border-b border-blue-400 py-4">
             <ul
               role="list"
-              className="flex min-w-full flex-none gap-x-6 px-4 text-sm font-semibold leading-6 text-gray-400 sm:px-6 lg:px-8"
+              className="flex min-w-full flex-none gap-x-8 px-1 text-base font-bold leading-6 text-gray-400 sm:px-2 lg:px-2"
             >
               {secondaryNavigation.map((item) => (
                 <li key={item.name}>
