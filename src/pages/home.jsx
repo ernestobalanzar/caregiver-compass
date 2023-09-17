@@ -6,6 +6,7 @@ import NestedFeed from "../components/NestedFeed";
 import stevenMchailImage from "../images/avatars/steven-mchail.jpg";
 import piersWilkinsImage from "../images/avatars/piers-wilkins.jpg";
 import rinaldoBeynonImage from "../images/avatars/rinaldo-beynon.jpg";
+import DonationModal from "../components/DonationModal";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -84,6 +85,7 @@ export default function Home() {
   return (
     <>
       {/* Heading */}
+      <DonationModal />
       <Container className={"py-10 sm:py-10"}>
         <div className="flex flex-col items-start justify-between gap-x-8 gap-y-4  bg-cyan-900  px-4 py-4 sm:flex-row sm:items-center sm:px-6 lg:px-8">
           <div>
