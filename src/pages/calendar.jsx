@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useCallback, useMemo } from "react";
+import React, { useState, useCallback } from "react";
 
 import { Calendar, Views, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
