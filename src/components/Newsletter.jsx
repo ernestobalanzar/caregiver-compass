@@ -1,117 +1,14 @@
 import { Fragment, useRef, useState, useEffect } from "react";
 import { EnvelopeIcon } from "@heroicons/react/24/outline";
 import { Dialog, Transition } from "@headlessui/react";
-import InputField from "./InputField";
-import MailchimpSubscribe from "react-mailchimp-subscribe";
 
-const CustomForm = ({ status, message, onValidated, closeModal }) => {
-  const [email, setEmail] = useState("");
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    email &&
-      firstName &&
-      lastName &&
-      email.indexOf("@") > -1 &&
-      onValidated({
-        EMAIL: email,
-        MERGE1: firstName,
-        MERGE2: lastName,
-      });
-  };
-
-  useEffect(() => {
-    if (status === "success") clearFields();
-    if (status === "success") clearFields();
-  }, [status]);
-
-  const clearFields = () => {
-    setFirstName("");
-    setLastName("");
-    setEmail("");
-  };
-
-  return (
-    <form className="mc__form" onSubmit={(e) => handleSubmit(e)}>
-      <h3 className="mc__title">
-        {status === "success"
-          ? "Success!"
-          : "Join our email list for future updates."}
-      </h3>
-
-      {status === "sending" && (
-        <div className="mc__alert mc__alert--sending">sending...</div>
-      )}
-      {status === "error" && (
-        <div
-          className="mc__alert mc__alert--error"
-          dangerouslySetInnerHTML={{ __html: message }}
-        />
-      )}
-      {status === "success" && (
-        <div
-          className="mc__alert mc__alert--success"
-          dangerouslySetInnerHTML={{ __html: message }}
-        />
-      )}
-
-      {status !== "success" ? (
-        <div className="mc__field-container">
-          <InputField
-            label="First Name"
-            onChangeHandler={setFirstName}
-            type="text"
-            value={firstName}
-            placeholder="First Name"
-            isRequired
-          />
-
-          <InputField
-            label="Last Name"
-            onChangeHandler={setLastName}
-            type="text"
-            value={lastName}
-            placeholder="Last Name"
-            isRequired
-          />
-
-          <InputField
-            label="Email"
-            onChangeHandler={setEmail}
-            type="email"
-            value={email}
-            placeholder="your@email.com"
-            isRequired
-          />
-        </div>
-      ) : null}
-
-      {/*Close button appears if form was successfully sent*/}
-      {status === "success" ? (
-        <PrimaryCTAButton
-          handleClick={() => closeModal}
-          label="close"
-          size="big"
-          customClass="g__justify-self-center"
-        />
-      ) : (
-        <InputField
-          label="subscribe"
-          type="submit"
-          formValues={[email, firstName, lastName]}
-        />
-      )}
-    </form>
-  );
-};
+import CustomMailchimpSubscribe from "./CustomMailChimp";
 
 export default function Newsletter(props) {
   const [open, setOpen] = useState(false);
   const cancelButtonRef = useRef(null);
-  const postUrl = `https://mycaregivercompass.us12.list-manage.com/subscribe?u=38db3fbbb91b10009e3eb5b20&id=4bff02e009`;
-
+  const postUrl = `https://mycaregivercompass.us12.list-manage.com/subscribe/post-json?u=38db3fbbb91b10009e3eb5b20&id=4bff02e009&f_id=008241e0f0`;
+  //10389278d57ae59b5137348c25365dad-us12
   useEffect(() => {
     setOpen(props.IsOpen);
   }, [props.IsOpen]);
@@ -166,21 +63,12 @@ export default function Newsletter(props) {
                       className="text-base font-semibold leading-6 text-gray-900"
                     ></Dialog.Title>
                     <div className="mt-2">
-                      <MailchimpSubscribe
+                      <CustomMailchimpSubscribe
                         url={postUrl}
-                        render={({
-                          subscribe,
-                          status,
-                          message,
-                          closeModal,
-                        }) => (
-                          <CustomForm
-                            status={status}
-                            message={message}
-                            closeModal={closeModal}
-                            onValidated={(formData) => subscribe(formData)}
-                          />
-                        )}
+                        closeModal={() => {
+                          /* Your modal close logic here */
+                          closeModal();
+                        }}
                       />
                     </div>
                   </div>
