@@ -12,7 +12,7 @@ const plans = [
     featured: false,
     price: { Monthly: "$0", Annually: "$0" },
     description:
-      "You want to start exploring the landscape of caregivers but you want to do it right. Get started for free.",
+      "You want to start exploring the landscape of caregivers but you want to do it right.",
     button: {
       label: "Get started for free",
       href: "/register",
@@ -40,11 +40,13 @@ const plans = [
     features: [
       "Advanced Health Tracking",
       "Comprehensive Mental Health Support",
-      "Advanced Financial Tracking",
+      "Advanced Financial/Budget Tracking",
       "Work-Life Balance Tools",
-      "Premium AI Personalized Tips",
+      "Premium AI Caregiving Recommendations",
       "Local Resources",
-      "Secure Cloud Storage",
+      "HIPPA Compliant Secure Cloud Storage",
+      "1:1 Care/Case Management Resources",
+      "and MORE!",
     ],
     logomarkClassName: "fill-gray-500",
   },
@@ -52,7 +54,8 @@ const plans = [
     name: "Institutional Plan",
     featured: true,
     price: { Monthly: "ask for a quote", Annually: "ask for a quote" },
-    description: "Support your Employees through thick and thin",
+    description:
+      "Support your Employees through thick and thin and you want to do it right",
     button: {
       label: "Subscribe",
       href: "/register",
