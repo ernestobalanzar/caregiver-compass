@@ -47,7 +47,7 @@ export default function LegalFinance() {
               />
               <span>
                 <strong className="font-semibold text-gray-900">
-                  divorce decree
+                  Divorce decree
                 </strong>
               </span>
             </li>
