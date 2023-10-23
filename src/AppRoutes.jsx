@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 import AuthLayout from "./layout/AuthLayout";
 import AppLayout from "./layout/AppLayout";
 import InnerAppLayout from "./layout/InnerAppLayout";
+import GeneralAdminLayout from "./layout/GeneralAdmin/GeneralAdminLayout";
 
 import Index from "./pages/index";
 import Login from "./pages/login";
 import Register from "./pages/register";
 import Layout from "./layout/Layout";
 import Home from "./pages/home";
-import Dashboard from "./pages/dashboard";
 import Team from "./pages/team";
 import Billing from "./pages/billing";
 import Settings from "./pages/settings";
@@ -29,6 +29,13 @@ import Help from "./pages/help";
 import Feedback from "./pages/feedback";
 import LegalFinance from "./pages/legal-finance";
 import LocalHealthcareService from "./pages/localHealthcareService";
+import Dashboard from "./pages/GeneralAdmin/dashboard";
+import Conditions from "./pages/GeneralAdmin/Conditions";
+import Institution from "./pages/GeneralAdmin/Institution";
+import DetailsInstitutions from "./pages/GeneralAdmin/DetailsInstitutions";
+import ServiceProviders from "./pages/GeneralAdmin/ServiceProviders";
+import LocalResources from "./pages/GeneralAdmin/LocalResources";
+import SupportTickets from "./pages/GeneralAdmin/SupportTickets";
 
 const AuthenticatedRoute = ({ children, ...rest }) => {
   return (
@@ -42,6 +49,18 @@ const AppRouteLayout = ({ children, ...rest }) => {
   return (
     <Routes>
       <Route {...rest} element={<AppLayout>{children}</AppLayout>}></Route>;
+    </Routes>
+  );
+};
+
+const AppGeneralAdminRouteLayout = ({ children, ...rest }) => {
+  return (
+    <Routes>
+      <Route
+        {...rest}
+        element={<GeneralAdminLayout>{children}</GeneralAdminLayout>}
+      ></Route>
+      ;
     </Routes>
   );
 };
@@ -125,9 +144,7 @@ const AppRoutes = () => {
       <RegisterLayout path="/register">
         <Register />
       </RegisterLayout>
-      <AppRouteLayout path="/dashboard">
-        <Dashboard />
-      </AppRouteLayout>
+
       <InnerAppRouteLayout path="/home">
         <Home />
       </InnerAppRouteLayout>
@@ -180,8 +197,29 @@ const AppRoutes = () => {
         <Settings />
       </AppRouteLayout>
       <AppRouteLayout path="/search">
-        <SearchResults />{" "}
+        <SearchResults />
       </AppRouteLayout>
+      <AppGeneralAdminRouteLayout path="/dashboard">
+        <Dashboard title="Dashboard" />
+      </AppGeneralAdminRouteLayout>
+      <AppGeneralAdminRouteLayout path="/conditions">
+        <Conditions title="Illnesses and Conditions" />
+      </AppGeneralAdminRouteLayout>
+      <AppGeneralAdminRouteLayout path="/institutions">
+        <Institution title="Institutions" />
+      </AppGeneralAdminRouteLayout>
+      <AppGeneralAdminRouteLayout path="/institutiondetails/:id">
+        <DetailsInstitutions title="Details Institution" />
+      </AppGeneralAdminRouteLayout>
+      <AppGeneralAdminRouteLayout path="/serviceproviders">
+        <ServiceProviders title="Service Providers" />
+      </AppGeneralAdminRouteLayout>
+      <AppGeneralAdminRouteLayout path="/localresources">
+        <LocalResources title="Local Resources" />
+      </AppGeneralAdminRouteLayout>
+      <AppGeneralAdminRouteLayout path="/support">
+        <SupportTickets title="Support Tickets" />
+      </AppGeneralAdminRouteLayout>
       <AuthenticatedRoute path="/">
         <Index />
       </AuthenticatedRoute>

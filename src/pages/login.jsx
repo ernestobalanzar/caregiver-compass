@@ -13,8 +13,13 @@ export default function Login() {
       (event.target.elements.password.value === "admin123")
     ) {
       navigateTo("/home");
+    } else if (
+      (event.target.elements.email.value === "rachel@compass.com") &
+      (event.target.elements.password.value === "admin123")
+    ) {
+      navigateTo("/dashboard");
     } else {
-      alert("Invalid Credentials");
+      alert("Invalid credentials");
     }
   };
 
