@@ -16,6 +16,7 @@ const navigation = [
   { name: "Institutions", href: "/institutions", current: false },
   { name: "Service Providers", href: "/serviceproviders", current: false },
   { name: "Local Resources", href: "/localresources", current: false },
+  { name: "Users", href: "/users", current: false },
   { name: "Customer Support", href: "/support", current: false },
 ];
 const userNavigation = [

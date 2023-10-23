@@ -36,6 +36,7 @@ import DetailsInstitutions from "./pages/GeneralAdmin/DetailsInstitutions";
 import ServiceProviders from "./pages/GeneralAdmin/ServiceProviders";
 import LocalResources from "./pages/GeneralAdmin/LocalResources";
 import SupportTickets from "./pages/GeneralAdmin/SupportTickets";
+import Users from "./pages/GeneralAdmin/Users";
 
 const AuthenticatedRoute = ({ children, ...rest }) => {
   return (
@@ -219,6 +220,9 @@ const AppRoutes = () => {
       </AppGeneralAdminRouteLayout>
       <AppGeneralAdminRouteLayout path="/support">
         <SupportTickets title="Support Tickets" />
+      </AppGeneralAdminRouteLayout>
+      <AppGeneralAdminRouteLayout path="/users">
+        <Users title="Users" />
       </AppGeneralAdminRouteLayout>
       <AuthenticatedRoute path="/">
         <Index />
