@@ -299,12 +299,13 @@ export default function AppLayout({ children }) {
             />
 
             <div className="flex flex-1 gap-x-4 self-stretch lg:gap-x-6 z-50">
-              <form className="relative flex flex-1" action="#" method="GET">
-                <label htmlFor="search-field" className="sr-only">
-                  Search
-                </label>
+              <form
+                className="relative flex flex-1"
+                action="/search"
+                method="GET"
+              >
                 <MagnifyingGlassIcon
-                  className="pointer-events-none absolute inset-y-0 left-0 h-full w-5 text-gray-400"
+                  className="pointer-events-none absolute inset-y-0 left-0 h-5 w-5 text-gray-400"
                   aria-hidden="true"
                 />
                 <input

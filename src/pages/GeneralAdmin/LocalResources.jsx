@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 const projects = [
   {
+    id: 1,
     name: "Physical Health",
     initials: "PH",
     href: "#",
@@ -12,6 +13,7 @@ const projects = [
     bgColor: "bg-pink-600",
   },
   {
+    id: 2,
     name: "Mental Health",
     initials: "MH",
     href: "#",
@@ -19,13 +21,15 @@ const projects = [
     bgColor: "bg-purple-600",
   },
   {
-    name: "Care Mangement",
+    id: 3,
+    name: "Care Management",
     initials: "CH",
     href: "#",
     members: 16,
     bgColor: "bg-yellow-500",
   },
   {
+    id: 4,
     name: "Work | Life",
     initials: "WL",
     href: "#",
@@ -33,6 +37,7 @@ const projects = [
     bgColor: "bg-green-500",
   },
   {
+    id: 5,
     name: "Financial | Legal",
     initials: "FL",
     href: "#",
@@ -40,6 +45,7 @@ const projects = [
     bgColor: "bg-blue-500",
   },
   {
+    id: 6,
     name: "Basic Needs",
     initials: "BN",
     href: "#",
@@ -118,12 +124,12 @@ export default function LocalResources() {
             </div>
             <div className="flex flex-1 items-center justify-between rounded-r-md border-b border-r border-t border-gray-200 bg-white">
               <div className="flex-1 truncate px-4 py-2 text-sm">
-                <a
-                  href={project.href}
+                <Link
+                  to={`/localresourcesbenefits/${project.id}`}
                   className="font-medium text-gray-900 hover:text-gray-600"
                 >
                   {project.name}
-                </a>
+                </Link>
               </div>
               <div className="flex-shrink-0 pr-2">
                 <Popover className="relative">

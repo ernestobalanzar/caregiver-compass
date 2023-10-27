@@ -37,6 +37,9 @@ import ServiceProviders from "./pages/GeneralAdmin/ServiceProviders";
 import LocalResources from "./pages/GeneralAdmin/LocalResources";
 import SupportTickets from "./pages/GeneralAdmin/SupportTickets";
 import Users from "./pages/GeneralAdmin/Users";
+import InstitutionAdminBenefits from "./pages/GeneralAdmin/InstitutionAdminBenefits";
+import LocalResourcesAdminBenefits from "./pages/GeneralAdmin/LocalResourcesAdminBenefits";
+import DetailsBenefit from "./pages/detailsBenefit";
 
 const AuthenticatedRoute = ({ children, ...rest }) => {
   return (
@@ -200,6 +203,9 @@ const AppRoutes = () => {
       <AppRouteLayout path="/search">
         <SearchResults />
       </AppRouteLayout>
+      <AppRouteLayout path="/detailsbenefit">
+        <DetailsBenefit />
+      </AppRouteLayout>
       <AppGeneralAdminRouteLayout path="/dashboard">
         <Dashboard title="Dashboard" />
       </AppGeneralAdminRouteLayout>
@@ -223,6 +229,12 @@ const AppRoutes = () => {
       </AppGeneralAdminRouteLayout>
       <AppGeneralAdminRouteLayout path="/users">
         <Users title="Users" />
+      </AppGeneralAdminRouteLayout>
+      <AppGeneralAdminRouteLayout path="/institutionbenefits/:ID_category">
+        <InstitutionAdminBenefits title="Institution Benefits" />
+      </AppGeneralAdminRouteLayout>
+      <AppGeneralAdminRouteLayout path="/localresourcesbenefits/:ID_category">
+        <LocalResourcesAdminBenefits title="Local Resources Benefits" />
       </AppGeneralAdminRouteLayout>
       <AuthenticatedRoute path="/">
         <Index />

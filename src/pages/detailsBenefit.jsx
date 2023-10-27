@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { useLocation, Link } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+
+function useQuery() {
+  return new URLSearchParams(useLocation().search);
+}
 
 const benefitsResourcesData = [
   {
@@ -370,105 +374,60 @@ const localresourcesBenefits = [
   },
 ];
 
-function useQuery() {
-  return new URLSearchParams(useLocation().search);
-}
+export default function detailsBenefit() {
+  const query = useQuery();
+  const navigate = useNavigate(); // Use the useNavigate hook here
+  const id = parseInt(query.get("id"));
+  const type = query.get("type");
 
-export default function SearchResults() {
-  const query = useQuery().get("search");
-  const [filteredInstitutionData, setFilteredInstitutionData] = useState([]);
-  const [filteredLocalData, setFilteredLocalData] = useState([]);
-  const [filterBy, setFilterBy] = useState("all"); // 'all', 'institution', 'local'
+  const [details, setDetails] = useState(null);
 
   useEffect(() => {
-    // Filtering the institution data
-    setFilteredInstitutionData(
-      benefitsResourcesData.filter(
-        (item) =>
-          item.Name.toLowerCase().includes(query.toLowerCase()) ||
-          item.Description.toLowerCase().includes(query.toLowerCase())
-      )
-    );
+    let filteredData;
 
-    // Filtering the local data
-    setFilteredLocalData(
-      localresourcesBenefits.filter(
-        (item) =>
-          item.Name.toLowerCase().includes(query.toLowerCase()) ||
-          item.Description.toLowerCase().includes(query.toLowerCase())
-      )
-    );
-  }, [query]);
+    if (type === "institution") {
+      filteredData = benefitsResourcesData.find((item) => item.ID === id);
+    } else if (type === "local") {
+      filteredData = localresourcesBenefits.find((item) => item.ID === id);
+    }
+
+    setDetails(filteredData);
+  }, [id, type]);
+
+  const handleBackClick = () => {
+    navigate(-1); // Navigate to the previous page
+  };
+
+  if (!details) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className="container mx-auto p-6">
-      <h1 className="text-2xl font-semibold text-gray-900 mb-4">
-        Search Results for "{query}"
-      </h1>
-
-      {/* Refine search */}
-      <div className="mb-6 space-x-4">
-        <button
-          className={`px-4 py-2 rounded ${
-            filterBy === "all"
-              ? "bg-blue-500 text-white"
-              : "bg-white text-blue-500 border border-blue-500"
-          }`}
-          onClick={() => setFilterBy("all")}
-        >
-          All
-        </button>
-        <button
-          className={`px-4 py-2 rounded ${
-            filterBy === "institution"
-              ? "bg-blue-500 text-white"
-              : "bg-white text-blue-500 border border-blue-500"
-          }`}
-          onClick={() => setFilterBy("institution")}
-        >
-          Institution
-        </button>
-        <button
-          className={`px-4 py-2 rounded ${
-            filterBy === "local"
-              ? "bg-blue-500 text-white"
-              : "bg-white text-blue-500 border border-blue-500"
-          }`}
-          onClick={() => setFilterBy("local")}
-        >
-          Local Resource
-        </button>
-      </div>
-
-      {filterBy !== "local" &&
-        filteredInstitutionData.map((item) => (
-          <div key={item.ID} className="p-4 bg-white rounded shadow mb-4">
-            <h2 className="font-medium text-lg mb-2">
-              {item.Name} (Institution)
-            </h2>
-            <p className="text-gray-600">{item.Description}</p>
-            <Link
-              to={`/detailsbenefit?id=${item.ID}&type=institution`}
-              className="text-blue-500 hover:underline mt-2 inline-block"
-            >
-              View Details
-            </Link>
-          </div>
-        ))}
-
-      {filterBy !== "institution" &&
-        filteredLocalData.map((item) => (
-          <div key={item.ID} className="p-4 bg-white rounded shadow mb-4">
-            <h2 className="font-medium text-lg mb-2">{item.Name} (Local)</h2>
-            <p className="text-gray-600">{item.Description}</p>
-            <Link
-              to={`/detailsbenefit?id=${item.ID}&type=local`}
-              className="text-blue-500 hover:underline mt-2 inline-block"
-            >
-              View Details
-            </Link>
-          </div>
-        ))}
+      <button
+        onClick={handleBackClick}
+        className="mb-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+      >
+        Back
+      </button>
+      <h1 className="text-2xl font-semibold mb-4">{details.Name}</h1>
+      <p className="mb-4">
+        <strong>Type:</strong> {details.Type}
+      </p>
+      <p className="mb-4">
+        <strong>Description:</strong> {details.Description}
+      </p>
+      <p className="mb-4">
+        <strong>Eligibility Criteria:</strong> {details.EligibilityCriteria}
+      </p>
+      <p className="mb-4">
+        <strong>How to Apply:</strong> {details.HowToApply}
+      </p>
+      {details.Timelines && (
+        <p className="mb-4">
+          <strong>Timelines:</strong> {details.Timelines}
+        </p>
+      )}
     </div>
   );
 }
