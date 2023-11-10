@@ -123,7 +123,7 @@ const RegisterLayout = ({ children, ...rest }) => {
             subtitle={
               <>
                 Already registered?{" "}
-                <Link to="/login" className="text-cyan-600">
+                <Link to="/" className="text-cyan-600">
                   Sign in
                 </Link>{" "}
                 to your account.
@@ -142,9 +142,6 @@ const RegisterLayout = ({ children, ...rest }) => {
 const AppRoutes = () => {
   return (
     <BrowserRouter>
-      <LoginLayout path="/login">
-        <Login />
-      </LoginLayout>
       <RegisterLayout path="/register">
         <Register />
       </RegisterLayout>
@@ -236,9 +233,9 @@ const AppRoutes = () => {
       <AppGeneralAdminRouteLayout path="/localresourcesbenefits/:ID_category">
         <LocalResourcesAdminBenefits title="Local Resources Benefits" />
       </AppGeneralAdminRouteLayout>
-      <AuthenticatedRoute path="/">
-        <Index />
-      </AuthenticatedRoute>
+      <LoginLayout path="/">
+        <Login />
+      </LoginLayout>
     </BrowserRouter>
   );
 };
