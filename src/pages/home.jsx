@@ -84,8 +84,10 @@ export default function Home() {
 
   return (
     <>
-      {/* Heading */}
-      <DonationModal />
+      {/* Heading
+        <DonationModal />
+       */}
+
       <Container className={"py-10 sm:py-10"}>
         {/*
        <div className="flex flex-col items-start justify-between gap-x-8 gap-y-4  bg-cyan-900  px-4 py-4 sm:flex-row sm:items-center sm:px-6 lg:px-8">
