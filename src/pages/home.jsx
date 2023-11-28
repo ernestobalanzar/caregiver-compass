@@ -87,7 +87,8 @@ export default function Home() {
       {/* Heading */}
       <DonationModal />
       <Container className={"py-10 sm:py-10"}>
-        <div className="flex flex-col items-start justify-between gap-x-8 gap-y-4  bg-cyan-900  px-4 py-4 sm:flex-row sm:items-center sm:px-6 lg:px-8">
+        {/*
+       <div className="flex flex-col items-start justify-between gap-x-8 gap-y-4  bg-cyan-900  px-4 py-4 sm:flex-row sm:items-center sm:px-6 lg:px-8">
           <div>
             <div className="flex items-center gap-x-3">
               <div className="flex-none rounded-full bg-green-400/10 p-1 text-green-400">
@@ -108,8 +109,6 @@ export default function Home() {
             Optimal
           </div>
         </div>
-
-        {/* Stats */}
         <div className="grid grid-cols-1  bg-cyan-900  sm:grid-cols-2 lg:grid-cols-5">
           {stats.map((stat, statIdx) => (
             <div
@@ -137,6 +136,9 @@ export default function Home() {
             </div>
           ))}
         </div>
+       */}
+
+        {/* Stats */}
       </Container>
       <Container className={"py-10 sm:py-10"}>
         <Feed addComment={addComment} comments={comments} />
