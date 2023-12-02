@@ -55,6 +55,15 @@ const projects = [
     dueDate: "June 10, 2023",
     dueDateTime: "2023-06-10T00:00Z",
   },
+  {
+    id: 6,
+    name: "Other Documents",
+    href: "#",
+    status: "Archived",
+    createdBy: "Tom Cook",
+    dueDate: "June 10, 2023",
+    dueDateTime: "2023-06-10T00:00Z",
+  },
 ];
 
 function classNames(...classes) {

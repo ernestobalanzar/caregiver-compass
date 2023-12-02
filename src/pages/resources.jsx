@@ -32,14 +32,14 @@ const actions = [
     description:
       "The more you learn about ALS, the better prepared your circle will be.",
   },
-  {
+  /*{
     title: "Chat Bot",
     href: "/bot",
     icon: ChatBubbleBottomCenterIcon,
     iconForeground: "text-teal-700",
     iconBackground: "bg-teal-50",
     description: "Our fully trained AI bot is ready to answer your questions.",
-  },
+  },*/
   {
     title: "Market Place",
     href: "/marketplace",
@@ -58,16 +58,16 @@ const actions = [
   },
 
   {
-    title: "Financial & Legal",
-    href: "/legalfinance",
+    title: "Employee Benefits",
+    href: "/#",
     icon: BanknotesIcon,
     iconForeground: "text-yellow-700",
     iconBackground: "bg-yellow-50",
     description: "Be prepared with key documents and resources",
   },
   {
-    title: "Care Management/Employee Benefits ",
-    href: "/generalresourcesform",
+    title: "Local Benefits",
+    href: "/#",
     icon: HeartIcon,
     iconForeground: "text-rose-700",
     iconBackground: "bg-rose-50",
