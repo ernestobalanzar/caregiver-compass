@@ -233,6 +233,9 @@ const AppRoutes = () => {
       <AppGeneralAdminRouteLayout path="/localresourcesbenefits/:ID_category">
         <LocalResourcesAdminBenefits title="Local Resources Benefits" />
       </AppGeneralAdminRouteLayout>
+      <AuthenticatedRoute path="/landing">
+        <Index />
+      </AuthenticatedRoute>
       <LoginLayout path="/">
         <Login />
       </LoginLayout>
