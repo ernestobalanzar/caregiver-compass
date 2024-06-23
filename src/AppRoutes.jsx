@@ -40,6 +40,7 @@ import Users from "./pages/GeneralAdmin/Users";
 import InstitutionAdminBenefits from "./pages/GeneralAdmin/InstitutionAdminBenefits";
 import LocalResourcesAdminBenefits from "./pages/GeneralAdmin/LocalResourcesAdminBenefits";
 import DetailsBenefit from "./pages/detailsBenefit";
+import NavigationPlans from "./pages/NavigationPlans";
 
 const AuthenticatedRoute = ({ children, ...rest }) => {
   return (
@@ -157,6 +158,9 @@ const AppRoutes = () => {
       </InnerAppRouteLayout>
       <InnerAppRouteLayout path="/resources">
         <Resources />
+      </InnerAppRouteLayout>
+      <InnerAppRouteLayout path="/navigation">
+        <NavigationPlans />
       </InnerAppRouteLayout>
       <InnerAppRouteLayout path="/oneonone">
         <OneOnOne />

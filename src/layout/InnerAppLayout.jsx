@@ -15,6 +15,7 @@ export default function InnerAppLayout({ children }) {
     { name: "Calendar", href: "/calendar", current: false },
     { name: "Resources", href: "/resources", current: false },
     { name: "Documents", href: "/docs", current: false },
+    { name: "Navigation", href: "/navigation", current: false },
   ];
 
   return (
@@ -46,7 +47,7 @@ export default function InnerAppLayout({ children }) {
         </header>
       </Container>
       <main className="">
-        <div className="bg-gray-50">{children}</div>
+        <div className="bg-gray-100">{children}</div>
       </main>
       <div className="lg:hidden fixed bottom-0 left-0 z-50 w-full h-16 bg-white border-t border-gray-200 dark:bg-gray-700 dark:border-gray-600">
         <div className="grid h-full max-w-lg grid-cols-5 mx-auto font-medium">
