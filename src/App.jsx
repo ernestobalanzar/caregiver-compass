@@ -1,4 +1,5 @@
 import "./App.css";
+import "./timeline.css";
 
 import AppRoutes from "./AppRoutes";
 
