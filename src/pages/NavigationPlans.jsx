@@ -155,7 +155,7 @@ const Questionnaire = () => {
         </div>
       ) : (
         <div className=" mt-6 p-4 border border-green-300 rounded-lg">
-          <h2 className="text-xl font-semibold mb-3">Navigation:</h2>
+          <h2 className="text-xl font-semibold mb-3">HOLA Mundo:</h2>
           <ul className="timeline">
             {result.map((resource, index) => (
               <li
